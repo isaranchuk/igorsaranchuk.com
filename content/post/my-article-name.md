@@ -1,7 +1,9 @@
----
-title: "My Article Name"
-date: 2017-12-23T23:35:21+02:00
-draft: false
----
++++
+date = 2016-04-10
+draft = false
+tags = ["academic", "hugo"]
+title = "Test"
+summary = """Test."""
++++
 
-### Test
+Test

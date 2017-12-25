@@ -2,7 +2,7 @@
 # About/Biography widget.
 widget = "about"
 active = true
-date = "2016-04-20T00:00:00"
+date = "2017-12-25T00:00:00"
 
 # Order that this section will appear in.
 weight = 5
@@ -10,31 +10,31 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Java",
+    "AWS",
+    "Distributed Systems"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
+  course = "MEng in Information technologies and controlling systems"
+  institution = "Lviv Polytechnic University"
+  year = 2013
+
+[[education.courses]]
+  course = "BSc in Computer Sciences"
+  institution = "Massachusetts Institute of Technology"
   year = 2012
 
-[[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
-
-[[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
- 
 +++
 
-# Biography
+# About
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I'm a passionate software engineer with very good experience in software development.  
+Almost all of my projects were greenfield with modern agile methodologies, like: Scrum, Continuous Integration, TDD, and DevOps stuff.  
+Also I had a chance to be involved into all phases of a project's life cycle: starting from requirements definition and design till deployment on production and application support.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Due to full-stack position, which I have been occupying for several years I have experience with both technologies: front-end and back-end.  
+All of that allows me to have a broad vision of a whole system, but not only a separate part of it.  
+
+Except technologies, which I use on a daily basis I always try to open new horizons, e.g. functional programming, complex distributed systems, etc.

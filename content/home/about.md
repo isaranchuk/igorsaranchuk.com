@@ -17,7 +17,7 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "MEng in Information technologies and controlling systems"
+  course = "MEng in Information Control Systems and Technologies"
   institution = "Lviv Polytechnic University"
   year = 2013
 

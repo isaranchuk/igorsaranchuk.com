@@ -1,7 +1,7 @@
 +++
 date = 2016-04-10
 draft = false
-tags = ["academic", "hugo"]
+tags = ["java", "distributed tracing"]
 title = "Test"
 summary = """Test."""
 +++

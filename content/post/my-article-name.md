@@ -1,9 +1,9 @@
 +++
 date = 2016-04-10
 draft = false
-tags = ["java", "distributed tracing"]
-title = "Test"
-summary = """Test."""
+tags = ["java", "spring boot", "kubernetes"]
+title = "Deploy Spring Boot web service on Kubernetes"
+summary = """A short demo how to deploy Spring Boot web service on Kubernetes."""
 +++
 
 # Introduction
@@ -12,6 +12,9 @@ So in this post I'd like to show you my way to get started with these technologi
 
 Our app will be a simple Spring Boot web application with a single REST endpoint `/hello` that will return `Hello Spring Boot and Kubernetes`.
 I agree not that much, but still it will show how we can merry this two technologies.
+
+If you are not familiar with Kubernetes basics then I would recommend to follow the official tutorial:
+https://kubernetes.io/docs/tutorials/kubernetes-basics/
 
 # Prerequisites
 Before we get started you have to set up you local environment to run this tutorial.
@@ -56,6 +59,3 @@ The first thing we have to do is to build docker images that will contain our we
 ```bash
 ./bin/build-image.sh
 ```
-
-If you are not familiar with Kubernetes basics then I would recommend to follow the official tutorial:
-https://kubernetes.io/docs/tutorials/kubernetes-basics/

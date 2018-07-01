@@ -48,7 +48,7 @@ defaultContentLanguageInSubdir = false
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "test@example.org"
+  email = ""
   address = "Lviv, Ukraine"
   office_hours = ""
   phone = ""
@@ -211,6 +211,11 @@ defaultContentLanguageInSubdir = false
     icon_pack = "fa"
     link = "//github.com/isaranchuk"
 
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/igorsaranchuk"
+
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
 #     desired widget in your `content/home/` folder.
@@ -244,10 +249,10 @@ defaultContentLanguageInSubdir = false
 #   url = "#teaching"
 #   weight = 5
 
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 3
+# [[menu.main]]
+#   name = "Contact"
+#   url = "#contact"
+#   weight = 3
 
 # Taxonomies.
 [taxonomies]

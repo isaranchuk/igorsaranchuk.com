@@ -1,5 +1,5 @@
 +++
-date = 2016-04-10
+date = 2018-07-01
 draft = false
 tags = ["java", "spring boot", "kubernetes"]
 title = "Deploy Spring Boot web service on Kubernetes"
@@ -7,29 +7,33 @@ summary = """A short demo how to deploy Spring Boot web service on Kubernetes.""
 +++
 
 # Introduction
-Spring Boot is a fresh breath in enterpraise Java world and Kubernetest is de facto a standarad in container orchestration.
+Spring Boot is a breath of fresh air in enterprise Java world and Kubernetes is de facto a standard in container orchestration.
 So in this post I'd like to show you my way to get started with these technologies.
 
-Our app will be a simple Spring Boot web application with a single REST endpoint `/hello` that will return `Hello Spring Boot and Kubernetes`.
-I agree not that much, but still it will show how we can merry this two technologies.
+My app will be a simple Spring Boot web application with a single REST endpoint `/hello` that will return `Hello Spring Boot and Kubernetes`.
+I agree not that much, but still it will show how to marry these two technologies.
 
-If you are not familiar with Kubernetes basics then I would recommend to follow the official tutorial:
+If you are not familiar with Kubernetes basics then I would recommend you to follow the official tutorial:
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
 
+The source code of the current tutorial can be found on GitHub repository: https://github.com/isaranchuk/spring-boot-kubernetes#examine-service
+
 # Prerequisites
-Before we get started you have to set up you local environment to run this tutorial.
+Before we get started you have to set up you local environment properly.
 
 ## Docker
 This tutorial requires Docker to build and run images:
 https://docs.docker.com/install/#supported-platforms
 
 ## Java and Maven
-Our main goal is to run java app on Kubernetes so you need Java (here we use Java 8) and of course Maven to build our app:
+Our main goal is to run Java app on Kubernetes so you need Java (here we use Java 8) and of course Maven to build our app:
 
 ### Java
+Follow link below to install download Java:
 https://java.com/en/download/
 
 ### Maven
+Check Maven installation instructions:
 https://maven.apache.org/install.html
 
 ## kubectl
@@ -58,4 +62,68 @@ The first thing we have to do is to build docker images that will contain our we
 
 ```bash
 ./bin/build-image.sh
+```
+
+The two key Kubernetes concepts that we're going to use here are Deployment and Service, you can examine `app.yaml` to check their declaration.  
+
+The Deployment instructs Kubernetes how to create and update instances of your application. Once you've created a Deployment, the Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.
+
+
+A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them. Services enable a loose coupling between dependent Pods.
+
+Run the following command to create Deployment and Service for our application:
+```bash
+kubectl create -f app.yaml
+```
+
+### Examine Deployment
+List of all the deployed objects can be obtained via:
+
+```bash
+kubectl get deployment
+```
+
+Check details of `webapp1` deployment:
+
+```bash
+kubectl describe deployment webapp1
+```
+
+### Examine Service
+List of all service objects can be obtained via:
+
+```bash
+kubectl get svc
+```
+
+Check details of `webapp1-svc` service:
+```bash
+kubectl describe svc webapp1-svc
+```
+
+### Call REST endpoint
+Get Minikube IP:
+
+```bash
+minikube ip
+```
+
+Call REST endpoint:
+```bash
+curl {minikube_ip}:32555/hello
+```
+
+### Troubleshooting tips
+Once you created Deployment Kubernetes will create pod:
+```bash
+kubectl get pod
+```
+It is very useful to get pod details to check its status and related events:
+```bash
+kubectl describe pod {pod_name}
+```
+
+Also I found useful to check the actual logs of my application:
+```bash
+kubectl logs {pod_name}
 ```

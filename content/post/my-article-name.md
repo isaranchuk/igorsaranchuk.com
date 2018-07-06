@@ -16,8 +16,6 @@ I agree not that much, but still it will show how to marry these two technologie
 If you are not familiar with Kubernetes basics then I would recommend you to follow the official tutorial:
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
 
-The source code of the current tutorial can be found on GitHub repository: https://github.com/isaranchuk/spring-boot-kubernetes#examine-service
-
 # Prerequisites
 Before we get started you have to set up you local environment properly.
 
@@ -26,10 +24,10 @@ This tutorial requires Docker to build and run images:
 https://docs.docker.com/install/#supported-platforms
 
 ## Java and Maven
-Our main goal is to run Java app on Kubernetes so you need Java (here we use Java 8) and of course Maven to build our app:
+Our main goal is to run Java app on Kubernetes, so you need Java (here we use Java 8) and of course Maven to build our app:
 
 ### Java
-Follow link below to install download Java:
+Follow the link below to install download Java:
 https://java.com/en/download/
 
 ### Maven
@@ -45,7 +43,7 @@ Install a single-node Kubernetes cluster to run Kubernetes locally:
 https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ### Minikube tips
-To be able to work with the docker daemon on your mac/linux host use the docker-env command in your shell:
+To be able to work with the docker daemon on your mac/linux host use the `docker-env` command in your shell:
 ```bash
 eval $(minikube docker-env)
 ```
@@ -54,11 +52,12 @@ Now you should see Docker images on Minikube:
 docker ps
 ```
 
-NOTE: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the environment variables for the current shell session.
+NOTE: You have to run eval `$(minikube docker-env)` on each terminal you want to use, since it only sets the environment variables for the current shell session.
 
 ## Getting started
-Once our local environment is up and running we can proceed with running our "Hello World" app.
-The first thing we have to do is to build docker images that will contain our web service.
+Once our local environment is up and running we can proceed with running our "Hello World" app.  
+You have to clone source code that can be found on GitHub: https://github.com/isaranchuk/spring-boot-kubernetes
+The first thing we need to do is to build docker image that will contain our web service.
 
 ```bash
 ./bin/build-image.sh
@@ -68,7 +67,6 @@ The two key Kubernetes concepts that we're going to use here are Deployment and 
 
 The Deployment instructs Kubernetes how to create and update instances of your application. Once you've created a Deployment, the Kubernetes master schedules mentioned application instances onto individual Nodes in the cluster.
 
-
 A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them. Services enable a loose coupling between dependent Pods.
 
 Run the following command to create Deployment and Service for our application:
@@ -76,7 +74,7 @@ Run the following command to create Deployment and Service for our application:
 kubectl create -f app.yaml
 ```
 
-### Examine Deployment
+### Check Deployment
 List of all the deployed objects can be obtained via:
 
 ```bash
@@ -89,7 +87,7 @@ Check details of `webapp1` deployment:
 kubectl describe deployment webapp1
 ```
 
-### Examine Service
+### Check Service
 List of all service objects can be obtained via:
 
 ```bash
@@ -102,13 +100,13 @@ kubectl describe svc webapp1-svc
 ```
 
 ### Call REST endpoint
-Get Minikube IP:
+First of all we have to know Minikube IP, so we can refer to our application:
 
 ```bash
 minikube ip
 ```
 
-Call REST endpoint:
+Then we can call our REST endpoint with any http client we like:
 ```bash
 curl {minikube_ip}:32555/hello
 ```

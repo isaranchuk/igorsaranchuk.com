@@ -16,7 +16,7 @@ I agree not that much, but still it will show how to marry these two technologie
 If you are not familiar with Kubernetes basics then I would recommend you to follow the official tutorial:
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
 
-Tutorial source code can be found on GitHub: https://github.com/isaranchuk/spring-boot-kubernetes
+Web application source code can be found on GitHub: https://github.com/isaranchuk/spring-boot-kubernetes
 
 # Prerequisites
 Before we get started you have to set up you local environment properly.

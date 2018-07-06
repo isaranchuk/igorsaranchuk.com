@@ -8,13 +8,15 @@ summary = """A short demo how to deploy Spring Boot web service on Kubernetes.""
 
 # Introduction
 Spring Boot is a breath of fresh air in enterprise Java world and Kubernetes is de facto a standard in container orchestration.
-So in this post I'd like to show you my way to get started with these technologies.
+So in this post I'd like to show you my way of getting started with these technologies.
 
 My app will be a simple Spring Boot web application with a single REST endpoint `/hello` that will return `Hello Spring Boot and Kubernetes`.
 I agree not that much, but still it will show how to marry these two technologies.
 
 If you are not familiar with Kubernetes basics then I would recommend you to follow the official tutorial:
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
+
+Tutorial source code can be found on GitHub: https://github.com/isaranchuk/spring-boot-kubernetes
 
 # Prerequisites
 Before we get started you have to set up you local environment properly.
@@ -56,7 +58,6 @@ NOTE: You have to run eval `$(minikube docker-env)` on each terminal you want to
 
 ## Getting started
 Once our local environment is up and running we can proceed with running our "Hello World" app.  
-You have to clone source code that can be found on GitHub: https://github.com/isaranchuk/spring-boot-kubernetes
 The first thing we need to do is to build docker image that will contain our web service.
 
 ```bash

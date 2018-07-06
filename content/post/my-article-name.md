@@ -111,6 +111,8 @@ Then we can call our REST endpoint with any http client we like:
 ```bash
 curl {minikube_ip}:32555/hello
 ```
+If everything is good you will see `Hello Spring Boot and Kubernetes` message otherwise something is wrong.  
+In case of any issues check troubleshooting tips bellow.
 
 ### Troubleshooting tips
 Once you created Deployment Kubernetes will create pod:

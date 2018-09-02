@@ -3,7 +3,7 @@ date = 2018-09-01
 draft = false
 tags = ["java", "spring boot", "docker", "docker-compose"]
 title = "Component and Integration Testing with Docker"
-summary = """Describes the approach for creating independent tests to check your service as a blackbox"""
+summary = """Describes the approach for creating independent tests to check your service as a whole"""
 +++
 
 ## Introduction
@@ -12,7 +12,7 @@ This technology shift doesn't have only impact on the way how we develop and dep
 In this post I'd like to show you how we can benefit from `Docker` and `docker-compose` when creating component and integration tests.
 
 
-The idea is to have your tests independent from the service source code, so once we do changes to the service source code our component tests should remain the same.  
+The idea is to have our tests independent from the service source code, so once we do changes to the service source code our component tests should remain the same.  
 To achieve this criteria we have to keep our tests as a standalone project in the same [git repository](https://github.com/isaranchuk/integration-testing-demo/tree/master/integration) and test our service as a blackbox by checking only its API.  
 Because API is the thing you wouldn't like to break as you want to make your clients happy.
 
@@ -28,7 +28,7 @@ Below you can see containers diagram for our microservice:
 
 ![activities containers diagram](/img/activities_service_container_diagram.png)
 
-You can find Activities Service source code [here](https://github.com/isaranchuk/integration-testing-demo).
+You can find Activities Service source code with all the instructions [here](https://github.com/isaranchuk/integration-testing-demo).
 
 ## Testing
 In microservices architecture components are microservices themselves, so our component test will check our service as a whole.  

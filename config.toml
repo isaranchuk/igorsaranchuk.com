@@ -1,6 +1,6 @@
-baseurl = "http://isaranchuk.com/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-title = "isaranchuk"
-copyright = "&copy; 2017 Igor Saranchuk"
+baseurl = "http://www.igorsaranchuk.com/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+title = "Igor Saranchuk"
+copyright = "&copy; 2023 Igor Saranchuk"
 theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
